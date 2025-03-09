@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import RecipeDetail from '@/components/RecipeDetail';
+import { Button } from "@/components/ui/button";
 
 // Mock detailed recipe data
 const mockRecipeDetails = {
@@ -206,7 +206,6 @@ const RecipeDetailsPage = () => {
   const [isFavorite, setIsFavorite] = useState(false);
   
   useEffect(() => {
-    // In a real app, this would be an API call
     if (id && mockRecipeDetails[id as keyof typeof mockRecipeDetails]) {
       setRecipe(mockRecipeDetails[id as keyof typeof mockRecipeDetails]);
     }
