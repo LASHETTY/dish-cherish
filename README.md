@@ -1,69 +1,55 @@
-# Welcome to your Lovable project
 
-## Project info
+# DishCherish - Recipe Management Application
 
-**URL**: https://lovable.dev/projects/56e29db1-ce5e-49b9-b2ba-d3898c4570ba
+A beautiful recipe management application with a warm, inviting design featuring recipe listing, detail view, creation form, and drag-and-drop organizing functionality.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Recipe Listing**: Browse through a collection of delicious recipes
+- **Recipe Details**: View comprehensive information about each recipe including ingredients, instructions, and cooking time
+- **Recipe Creation**: Add your own recipes with an intuitive form
+- **Recipe Organization**: Organize recipes into custom categories with drag-and-drop functionality
 
-**Use Lovable**
+## Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/56e29db1-ce5e-49b9-b2ba-d3898c4570ba) and start prompting.
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js & npm
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone <YOUR_REPOSITORY_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd dish-cherish
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- `src/components`: Reusable UI components
+- `src/pages`: Main application pages
+- `src/hooks`: Custom React hooks
+- `src/lib`: Utility functions and helpers
 
-**Use GitHub Codespaces**
+## Contributing
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Contributions are welcome! Feel free to submit pull requests or open issues.
 
-## What technologies are used for this project?
+## License
 
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/56e29db1-ce5e-49b9-b2ba-d3898c4570ba) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+This project is licensed under the MIT License.
