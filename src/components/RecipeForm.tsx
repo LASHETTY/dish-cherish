@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -24,6 +23,7 @@ import {
 } from "@/components/ui/select";
 import { PlusCircle, Minus, Plus, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
+import { createRecipe } from '@/lib/recipes';
 
 const recipeSchema = z.object({
   title: z.string().min(3, { message: "Title must be at least 3 characters" }).max(100),
@@ -49,6 +49,7 @@ const RecipeForm: React.FC = () => {
   const navigate = useNavigate();
   const [ingredients, setIngredients] = useState([{ name: "", quantity: "" }]);
   const [instructions, setInstructions] = useState([""]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<RecipeFormValues>({
     resolver: zodResolver(recipeSchema),
@@ -66,15 +67,32 @@ const RecipeForm: React.FC = () => {
 
   const onSubmit = async (values: RecipeFormValues) => {
     try {
-      // In a real app, this would be an API call
-      console.log("Form submitted:", values);
+      setIsSubmitting(true);
       
-      // For demo purposes, we'll simulate success
+      const { recipe, error } = await createRecipe({
+        title: values.title,
+        description: values.description,
+        image: values.imageUrl || "https://images.unsplash.com/photo-1498837167922-ddd27525d352",
+        cookTime: values.cookTime,
+        servings: values.servings,
+        difficulty: values.difficulty,
+        ingredients: values.ingredients,
+        instructions: values.instructions
+      });
+      
+      if (error) {
+        toast.error(`Failed to add recipe: ${error}`);
+        console.error("Form submission error:", error);
+        return;
+      }
+      
       toast.success("Recipe added successfully!");
       setTimeout(() => navigate("/"), 1500);
     } catch (error) {
       toast.error("Failed to add recipe. Please try again.");
       console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
